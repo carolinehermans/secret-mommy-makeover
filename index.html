@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+    <link rel="stylesheet" href="main.css"></link>
+    <link rel="shortcut icon" href="favicon.png"></link>
+
+    <style> body {padding: 0; margin: 0;} </style>
+    <script src="../p5.min.js"></script>
+    <script src="../addons/p5.dom.min.js"></script>
+    <script src="../addons/p5.sound.min.js"></script>
+    <script src="../addons/p5.play.js"></script>
+
+    <script src="sketch.js"></script>
+    <script>
+      setInterval(() => {
+        let wash = document.getElementById("wash")
+        let washText = wash.src.split('img/')[1]
+        if (washText === "wash-1.png") wash.src = "./img/wash-2.png"
+        else wash.src = "./img/wash-1.png"
+      }, 350)
+    </script>
+    <script src="game.js"></script>
+    <title>Secret Mommy Makeover</title>
+  </head>
+  <body>
+    <audio autoplay hidden loop controls>
+      <source src="background-music.mp3" type="audio/mp3">
+    </audio>
+    <div id="p5_loading"></div>
+    <img id="intro-1" src="./img/intro-1.gif"/>
+    <img id="intro-1-start" class="pointer"  src="./img/start.png" onmouseover="this.src='./img/start-hover.png'" onmouseout="this.src='./img/start.png'" onclick="this.style.display = 'none'; document.getElementById('intro-1').style.display = 'none';"/>
+    <img id="intro-2" src="./img/intro-2.gif"/>
+    <img id="intro-2-start" class="pointer"  src="./img/next-hover.png" onmouseover="this.src='./img/next.png'" onmouseout="this.src='./img/next-hover.png'" onclick="this.style.display = 'none'; document.getElementById('intro-2').style.display = 'none';"/>
+    <img id="intro-3" src="./img/intro-3.gif"/>
+    <img id="intro-3-start" class="pointer"  src="./img/next.png" onmouseover="this.src='./img/next-hover.png'" onmouseout="this.src='./img/next.png'" onclick="this.style.display = 'none'; document.getElementById('intro-3').style.display = 'none';"/>
+    <img id="intro-4" src="./img/intro-4.gif"/>
+    <img id="intro-4-start" class="pointer"  src="./img/open.png" onmouseover="this.src='./img/open-hover.png'" onmouseout="this.src='./img/open.png'" onclick="this.style.display = 'none'; document.getElementById('intro-4').style.display = 'none'; changeState();"/>
+    <img id="mirror" draggable="false" src="./img/mirror.png"/>
+    <div id="done-container-container">
+        <img id="empty-hover" style="cursor: url(./img/cursor-arrow.png), auto;" src="./img/empty.png"/>
+        <div id="done-container">
+        <img id="done-button" class="pointer"  src="./img/done.png" onmouseover="this.src='./img/done-hover.png'" onmouseout="this.src='./img/done.png'" onclick="document.done = 1;"/>
+      </div>
+    </div>
+    <img id="drawer-button" class="pointer" src="./img/drawer-button.png" onclick="changeState(); sound.stop();"/>
+    <img id="letter-open" class="pointer" src="./img/letter-open-full.png" onclick="{console.log(document.currentMakeup); document.getElementById(document.currentMakeup.extraImg).style.display = 'none';
+    document.getElementById(document.currentMakeup.img).style.display = 'block'; document.getElementById(drawer-text).innerHTML = '';}"/>
+    <img id="empty" draggable="false" src="./img/empty.png"/>
+    <img id="wash" src="./img/wash-1.png"/>
+    <img id="restart-button" class="pointer" src="./img/restart.png"  onmouseover="this.src='./img/restart-hover.png'" onmouseout="this.src='./img/restart.png'" onclick="location.reload()"/>
+    <div id="drawer-state">
+      <div id="drawer-text"></div>
+    </div>
+  </body>
+</html>

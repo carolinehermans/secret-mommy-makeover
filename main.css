@@ -1,0 +1,247 @@
+@font-face {
+  font-family: 'RWA';
+  src: url("RWATangoCharlie-Slanted.otf")
+}
+
+img {
+  user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+body {
+  padding-top: 60px !important;
+  background-image: url("./img/hearts.jpg");
+  background-repeat: repeat;
+  cursor: url("./img/cursor-arrow.png"), auto;
+}
+
+.pointer {
+  cursor: url("./img/cursor-pointer.png"), pointer;
+}
+
+#defaultCanvas0 {
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  top: 60;
+  display: none;
+  position: absolute;
+  cursor: none !important;
+}
+
+#drawer-state {
+  width: 980px;
+  height: 620px;
+  margin: 0 auto;
+  position: relative;
+  background-image: url("./img/drawer.png");
+}
+
+#drawer {
+  width: 980px;
+  height: 620px;
+}
+
+#drawer-text {
+  font-family: 'RWA';
+  font-size: 34px;
+  color: #0f4763;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 83px;
+}
+
+body {
+  position: relative;
+}
+
+#face {
+  position: absolute;
+  left: 160;
+  top: 15;
+  cursor: none;
+}
+
+#drawer-button {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 595px;
+  z-index: 999;
+}
+
+#done-container-container {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: 980px;
+  height: 620px;
+}
+
+#done-container {
+  position: relative;
+  width: 980px;
+  height: 620px;
+  margin: 0 auto;
+}
+
+#done-button {
+  position: absolute;
+  right: 10px;
+  margin: auto;
+  bottom: 40px;
+  z-index: 1000;
+  width: 130px;
+}
+
+#mirror{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 998;
+  width: 980px;
+  height: 620px;
+  cursor: none;
+  display: none;
+}
+
+
+
+#letter-open {
+  width: 980px;
+  height: 620px;
+  position: absolute;
+  margin:auto;
+  left:0;
+  right:0;
+  z-index:999;
+  display: none;
+}
+
+#empty {
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#intro-1{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 1010;
+  width: 980px;
+  height: 620px;
+}
+
+#intro-1-start {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 500px;
+  z-index: 1011;
+  width: 300px;
+}
+
+#intro-2{
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 1008;
+  width: 980px;
+  height: 620px;
+}
+
+#intro-2-start {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 320px;
+  z-index: 1009;
+  width: 100px;
+}
+
+#intro-3 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 1006;
+  width: 980px;
+  height: 620px;
+}
+
+#intro-3-start {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 610px;
+  z-index: 1007;
+  width: 110px;
+}
+
+#intro-4 {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  z-index: 1004;
+  width: 980px;
+  height: 620px;
+}
+
+#intro-4-start {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 520px;
+  z-index: 1005;
+  width: 300px;
+}
+
+#wash {
+  position: absolute;
+  margin: auto;
+  display: none;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 980px;
+  height: 620px;
+}
+
+#restart-button {
+  display: none;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 550px;
+  z-index: 1000;
+  position: absolute;
+}
+
+#empty-hover {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 200px;
+  width: 300px;
+  z-index: 999;
+}
