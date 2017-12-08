@@ -175,7 +175,7 @@
       <div id="done-container-container">
           <img id="empty-hover" style="cursor: url(./img/cursor-arrow.png), auto;" src="./img/empty.png"/>
           <div id="done-container">
-          <img id="done-button" class="pointer"  src="./img/done.png" onmouseover="popAudio.play(); this.src='./img/done-hover.png'" onmouseout="this.src='./img/done.png'" onclick="document.done = 1; currentState = 'makeup'; stateCheck();"/>
+          <img id="done-button" class="pointer"  src="./img/done.png" onmouseover="popAudio.play(); this.src='./img/done-hover.png'" onmouseout="this.src='./img/done.png'" onclick="document.done = 1; document.getElementById('drawer-state').style.display = 'none'; document.getElementById('defaultCanvas0').style.display = 'block';"/>
         </div>
       </div>
       <img id="drawer-button" class="pointer" src="./img/drawer-button.png" onmouseover="popAudio.play(); this.src='./img/drawer-button-hover.png'" onmouseout="this.src='./img/drawer-button.png'" onclick="changeState(); sound.stop();"/>
