@@ -8,7 +8,6 @@ let cursorY;
 let mirror;
 let makeups;
 let anim;
-let sound;
 let pastEmpties;
 let faceOverlay;
 let razorMakeup;
@@ -16,7 +15,6 @@ const imgPath = "./img/"
 
 function preload() {
   face = loadImage(imgPath + "face.png")
-  sound = loadSound('vibrate.mp3');
   faceOverlay = loadImage(imgPath + "faceOverlay.png");
   mark = loadImage(imgPath + "blush-mark.png")
   cursor = loadImage(imgPath + "blush.png")
@@ -52,12 +50,8 @@ function mouseDragged() {
 function mousePressed() {
   if (document.currentMakeup.img === "razor.png") {
     clicked = true;
-    let w = mark.width/2
-    let h = mark.height/2
-    if (w < 0) w = 0
-    if (h < 0) h = 0
     let i = Math.floor(Math.random() * document.currentMakeup.markImgs.length)
-    document.currentMakeup.empty.blend(razorMakeup[i], 0, 0, razorMakeup[i].width, razorMakeup[i].height, mouseX - w, mouseY - h, razorMakeup[i].width, razorMakeup[i].height, DARKEST)
+    document.currentMakeup.empty.blend(razorMakeup[i], 0, 0, razorMakeup[i].width, razorMakeup[i].height, mouseX, mouseY, razorMakeup[i].width, razorMakeup[i].height, DARKEST)
   }
 }
 

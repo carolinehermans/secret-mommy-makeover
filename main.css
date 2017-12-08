@@ -127,6 +127,17 @@ body {
   display: none;
 }
 
+#polaroid-close {
+  width: 980px;
+  height: 620px;
+  position: absolute;
+  margin:auto;
+  left:0;
+  right:0;
+  z-index:999;
+  display: none;
+}
+
 #empty {
   width: 0;
   height: 0;
@@ -170,9 +181,9 @@ body {
   left: 0;
   right: 0;
   margin: auto;
-  top: 320px;
+  top: 160px;
   z-index: 1009;
-  width: 100px;
+  width: 160px;
 }
 
 #intro-3 {

@@ -6,24 +6,11 @@ const makeupTypes = [
     extraImg: "letter-open",
     noMark: true,
     noCursor: true,
-    x: 190,
-    y: 380,
-    degrees: 165,
+    x: 160,
+    y: 100,
+    degrees: -15,
     h: 90,
     drawFn: () => {},
-  },
-  {
-    name: "blush",
-    funName: "a soft brush",
-    drawFn: () => {
-      tint(255, 40)
-      image(makeupTypes[1].empty, 0, 0)
-    },
-    x: 250,
-    y: 150,
-    degrees: -15,
-    h: 340,
-    t_off: -20,
   },
   {
     name: "razor",
@@ -32,7 +19,7 @@ const makeupTypes = [
     noMark: true,
     drawFn: () => {
       tint(255, 255)
-      image(makeupTypes[2].empty, 0, 0)
+      image(makeupTypes[1].empty, 0, 0)
     },
     x: 430,
     y: 80,
@@ -42,17 +29,30 @@ const makeupTypes = [
     w_off: 50,
   },
   {
-    name: "lipstick",
-    funName: "LIPSTICK! i'm gonna look so good",
+    name: "foundation",
+    funName: "looks like skin powder",
     drawFn: () => {
-      tint(255, 170)
-      image(makeupTypes[3].empty, 0, 0)
+      tint(255, 100)
+      image(makeupTypes[2].empty, 0, 0)
     },
-    x: 650,
-    y: 290,
-    degrees: -3,
-    h: 200,
-    t_off: -7,
+    x: 480,
+    y: 120,
+    degrees: 20,
+    h: 370,
+    t_off: -2,
+  },
+  {
+    name: "polaroid",
+    funName: "whoa, this was ages ago",
+    extraText: "aww.",
+    extraImg: "polaroid-close",
+    noMark: true,
+    noCursor: true,
+    x: 640,
+    y: 90,
+    degrees: 7,
+    h: 180,
+    drawFn: () => {},
   },
   {
     name: "condom",
@@ -61,18 +61,44 @@ const makeupTypes = [
       tint(255, 90)
       image(makeupTypes[4].empty, 0, 0)
     },
-    x: 630,
-    y: 90,
-    degrees: 7,
-    h: 160,
+    x: 170,
+    y: 300,
+    degrees: 10,
+    h: 170,
     t_off: -40,
+  },
+  {
+    name: "blush",
+    funName: "a soft brush",
+    drawFn: () => {
+      tint(255, 40)
+      image(makeupTypes[5].empty, 0, 0)
+    },
+    x: 250,
+    y: 150,
+    degrees: -15,
+    h: 340,
+    t_off: -20,
+  },
+  {
+    name: "lipstick",
+    funName: "LIPSTICK! i'm gonna look so good",
+    drawFn: () => {
+      tint(255, 170)
+      image(makeupTypes[6].empty, 0, 0)
+    },
+    x: 650,
+    y: 290,
+    degrees: -3,
+    h: 200,
+    t_off: -7,
   },
   {
     name: "eyeshadow",
     funName: "smudgey dark stuff",
     drawFn: () => {
       tint(255, 80)
-      image(makeupTypes[5].empty, 0, 0)
+      image(makeupTypes[7].empty, 0, 0)
     },
     x: 360,
     y: 80,
@@ -80,33 +106,6 @@ const makeupTypes = [
     w: 50,
     h: 380,
     t_off: -7,
-  },
-  // {
-  //   name: "eyeliner",
-  //   funName: "some kind of pencil",
-  //   drawFn: () => {
-  //     tint(255, 170)
-  //     image(makeupTypes[6].empty, 0, 0)
-  //   },
-  //   x: 480,
-  //   y: 120,
-  //   degrees: 20,
-  //   h: 370,
-  //   t_off: -2,
-  //   w_off: 5,
-  // },
-  {
-    name: "foundation",
-    funName: "looks like skin powder",
-    drawFn: () => {
-      tint(255, 100)
-      image(makeupTypes[6].empty, 0, 0)
-    },
-    x: 480,
-    y: 120,
-    degrees: 20,
-    h: 370,
-    t_off: -2,
   },
   {
     name: "prozac",
@@ -138,19 +137,9 @@ currentState = "makeup"
 document.currentMakeup = makeupTypes[0]
 document.makeupChanged = false
 document.allMakeup = makeupTypes
+let popAudio = new Audio('pop.mp3')
 
 window.onload = () => {
-  let drawerButton = document.getElementById("drawer-button")
-
-  drawerButton.addEventListener("mouseenter", () => {
-    drawerButton.src = imgPath + "drawer-button-hover.png"
-  })
-
-  drawerButton.addEventListener("mouseleave", () => {
-    drawerButton.src = imgPath + "drawer-button.png"
-  })
-
-
 
   makeupTypes.map((mkup, i) => {
     let snd;
