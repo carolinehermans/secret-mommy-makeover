@@ -106,7 +106,7 @@ window.onload = () => {
     })
     parent.appendChild(makeupImg)
   })
-  
+
   stateCheck()
 }
 

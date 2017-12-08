@@ -113,7 +113,7 @@ body {
   position: absolute;
   right: 10px;
   margin: auto;
-  bottom: 10px;
+  top: 10px;
   z-index: 1000;
   width: 130px;
 }
@@ -267,7 +267,7 @@ body {
   display: none;
   position: absolute;
   right: 0;
-  bottom: 0;
+  top: 0;
   height: 200px;
   width: 300px;
   z-index: 999;
