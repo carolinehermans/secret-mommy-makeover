@@ -184,7 +184,7 @@ makeupTypes.map((makeup, i) => {
 
 
 
-
+document.makeupTypes = makeupTypes
 
 currentState = "makeup"
 
@@ -227,7 +227,7 @@ window.onload = () => {
     mkup['currentImg'] = mkup.img
     makeupImg.addEventListener("mouseenter", () => {
       makeupImg.src = imgPath + mkup.hoverImg
-      makeupImg.style.height = `${mkup.h + mkup.h/10}px`
+      makeupImg.style.height = `${mkup.h + mkup.h/10}px`;
       makeupImg.style.top = mkup.y - mkup.h/20 + 'px'
       makeupImg.style.left = mkup.x - mkup.h/50 + 'px'
       mouseOverAudio.play();
@@ -235,7 +235,7 @@ window.onload = () => {
     })
     makeupImg.addEventListener("mouseleave", () => {
       makeupImg.src = imgPath + mkup.img
-      makeupImg.style.height = `${mkup.h}px`
+      makeupImg.style.height = `${mkup.h}px`;
       makeupImg.style.top = mkup.y + 'px'
       makeupImg.style.left = mkup.x + 'px'
       if (document.getElementById('drawer-text').innerHTML != mkup.extraText) {
@@ -244,7 +244,7 @@ window.onload = () => {
     })
     parent.appendChild(makeupImg)
   })
-
+  document.makeupTypes = makeupTypes
   stateCheck()
 }
 
