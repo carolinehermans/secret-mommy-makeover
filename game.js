@@ -208,11 +208,11 @@ window.onload = () => {
     makeupImg.style.position = 'absolute'
     makeupImg.style.left = mkup.x + 'px'
     makeupImg.style.top = mkup.y + 'px'
-    makeupImg.className = "pointer"
-    makeupImg.style.transform = `rotate(${mkup.degrees}deg)`
-    makeupImg.style.height = `${mkup.h}px`
+    makeupImg.className = "pointer";
+    makeupImg.style.transform = `rotate(${mkup.degrees}deg)`;
+    makeupImg.style.height = `${mkup.h}px`;
     makeupImg.onclick = () => {
-      document.currentMakeup = makeupTypes[i]
+      document.currentMakeup = makeupTypes[i];
       makeupTypes[i].used = true
       if (mkup.extraImg) {
         document.getElementById(mkup.extraImg).style.display = "block"
