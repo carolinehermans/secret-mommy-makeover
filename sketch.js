@@ -14,23 +14,10 @@ let razorMakeup;
 const imgPath = "./img/"
 
 function preload() {
-  face = loadImage(imgPath + "face.png")
-  faceOverlay = loadImage(imgPath + "faceOverlay.png");
   mark = loadImage(imgPath + "blush-mark.png")
   cursor = loadImage(imgPath + "blush.png")
   mirror = loadImage(imgPath + "mirror.png")
-
-  makeupTypes.map((makeup, i) => {
-    makeup['empty'] = loadImage(imgPath + "empty.png");
-    makeup['used'] = false;
-    if (!makeup.noCursor) makeup['cursorP5'] = loadImage(imgPath + makeup.cursorImg)
-    if (!makeup.noMark) makeup['markP5'] = loadImage(imgPath + makeup.markImg)
-
-    if (makeup.name === "razor") razorMakeup = makeup.markImgs.map((img, i) => loadImage(imgPath + img))
-  })
-  pastEmpties = loadImage(imgPath + "empty.png")
 }
-
 
 function mouseDragged() {
   if (document.currentMakeup.img === "razor.png") {
@@ -57,6 +44,15 @@ function mousePressed() {
 
 
 function setup() {
+  makeupTypes.map((makeup, i) => {
+    makeup['empty'] = loadImage(imgPath + "empty.png");
+    makeup['used'] = false;
+    if (!makeup.noCursor) makeup['cursorP5'] = loadImage(imgPath + makeup.cursorImg)
+    if (!makeup.noMark) makeup['markP5'] = loadImage(imgPath + makeup.markImg)
+    if (makeup.name === "razor") razorMakeup = makeup.markImgs.map((img, i) => loadImage(imgPath + img))
+  })
+  face = loadImage(imgPath + "face.png")
+  faceOverlay = loadImage(imgPath + "faceOverlay.png");
   canvas = createCanvas(980, 620);
   background(255)
 }

@@ -23,6 +23,10 @@ body {
   cursor: url("./img/cursor-pointer.png"), pointer;
 }
 
+#after_load {
+  display: none;
+}
+
 #defaultCanvas0 {
   margin: 0 auto;
   left: 0;
@@ -32,6 +36,18 @@ body {
   position: absolute;
   cursor: none !important;
 }
+
+#p5_loading, #js_loading {
+  width: 980px;
+  height: 620px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1100;
+}
+
+
 
 #drawer-state {
   width: 980px;
@@ -97,7 +113,7 @@ body {
   position: absolute;
   right: 10px;
   margin: auto;
-  bottom: 40px;
+  bottom: 10px;
   z-index: 1000;
   width: 130px;
 }

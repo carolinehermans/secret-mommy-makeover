@@ -1,3 +1,53 @@
+/* preloading stuff */
+
+const imagesToLoad = [
+  "letter.png", "letter-hover.png", "letter-open-full.png",
+  "blush.png", "blush-hover.png",
+  "condom.png", "condom-hover.png",
+  "cursor-arrow.png", "cursor-pointer.png",
+  "done.png", "done-hover.png",
+  "drawer-button-hover.png", "drawer-button.png", "drawer.png",
+  "empty.png", "eyeshadow.png", "eyeshadow-hover.png",
+  "foundation.png", "foundation-hover.png",
+  "intro-1.gif", "intro-2.gif", "intro-3.gif", "intro-4.gif",
+  "lipstick.png", "lipstick-hover.png", "mirror.png",
+  "next.png", "next-hover.png", "open.png", "open-hover.png",
+  "polaroid.png", "polaroid-close.png", "polaroid-hover.png",
+  "prozac.png", "prozac-hover.png", "razor.png", "razor-hover.png",
+  "restart.png", "restart-hover.png", "start.png", "start-hover.png",
+  "wash-1.png", "wash-2.png"
+]
+
+const soundsToLoad = ["munch.wav", "pop.mp3", "background-music.mp3"]
+
+
+
+preload()
+
+function preload() {
+  imagesToLoad.map((imgSrc, i) => {
+    let img = new Image()
+    img.src = imgPath + imgSrc
+    img.onload = loaded
+   })
+
+   soundsToLoad.map((soundSrc, i) => {
+     let snd = new Audio()
+     snd.src = soundSrc
+     snd.canplaythrough = loaded
+   })
+}
+
+var numLoaded = 0
+
+function loaded() {
+  numLoaded++
+  if (numLoaded = imagesToLoad.length + soundsToLoad.length) {
+    document.getElementById("js_loading").style.display = "none"
+    document.getElementById("after_load").style.display = "block"
+  }
+}
+
 const makeupTypes = [
   {
     name: "letter",
@@ -131,7 +181,11 @@ makeupTypes.map((makeup, i) => {
   if (!makeup.noCursor) makeup["cursorImg"] = makeup.name + "-cursor.png"
 })
 
-console.log(makeupTypes)
+
+
+
+
+
 currentState = "makeup"
 
 document.currentMakeup = makeupTypes[0]
@@ -217,8 +271,7 @@ const stateCheck = () => {
     document.getElementById("mirror").style.display = "block"
     document.getElementById("empty-hover").style.display = "block"
     document.getElementById("drawer-button").style.display = "block"
-    document.getElementById("done-button").style.display = "block"
-    document.getElementById("defaultCanvas0").style.display = "block"
+    if (document.getElementById("defaultCanvas0")) document.getElementById("defaultCanvas0").style.display = "block"
   }
 
   if (currentState === "drawer-state") {
@@ -226,7 +279,6 @@ const stateCheck = () => {
     document.getElementById("mirror").style.display = "none"
     document.getElementById("empty-hover").style.display = "none"
     document.getElementById("drawer-button").style.display = "none"
-    document.getElementById("done-button").style.display = "none"
     document.getElementById("drawer-state").style.display = "block"
   }
 }
