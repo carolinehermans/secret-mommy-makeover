@@ -13,13 +13,26 @@ const makeupTypes = [
     drawFn: () => {},
   },
   {
+    name: "foundation",
+    funName: "looks like skin powder",
+    drawFn: () => {
+      tint(255, 100)
+      image(makeupTypes[1].empty, 0, 0)
+    },
+    x: 480,
+    y: 120,
+    degrees: 20,
+    h: 370,
+    t_off: -2,
+  },
+  {
     name: "razor",
     funName: "this one looks sharp",
     markImgs: ["razor-mark1.png", "razor-mark2.png", "razor-mark3.png", "razor-mark4.png", "razor-mark5.png"],
     noMark: true,
     drawFn: () => {
       tint(255, 255)
-      image(makeupTypes[1].empty, 0, 0)
+      image(makeupTypes[2].empty, 0, 0)
     },
     x: 430,
     y: 80,
@@ -27,19 +40,6 @@ const makeupTypes = [
     h: 350,
     t_off: 0,
     w_off: 50,
-  },
-  {
-    name: "foundation",
-    funName: "looks like skin powder",
-    drawFn: () => {
-      tint(255, 100)
-      image(makeupTypes[2].empty, 0, 0)
-    },
-    x: 480,
-    y: 120,
-    degrees: 20,
-    h: 370,
-    t_off: -2,
   },
   {
     name: "polaroid",
