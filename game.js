@@ -5,9 +5,8 @@ const imagesToLoad = [
   "blush.png", "blush-hover.png",
   "condom.png", "condom-hover.png",
   "cursor-arrow.png", "cursor-pointer.png",
-  "done.png", "done-hover.png",
   "drawer-button-hover.png", "drawer-button.png", "drawer.png",
-  "empty.png", "eyeshadow.png", "eyeshadow-hover.png",
+  "eyeshadow.png", "eyeshadow-hover.png",
   "foundation.png", "foundation-hover.png",
   "intro-1.gif", "intro-2.gif", "intro-3.gif", "intro-4.gif",
   "lipstick.png", "lipstick-hover.png", "mirror.png",
@@ -56,6 +55,13 @@ document.allMakeup = makeupTypes
 let popAudio = new Audio('pop.mp3')
 
 window.onload = () => {
+
+  setInterval(() => {
+    let wash = document.getElementById("wash")
+    let washText = wash.src.split('img/')[1]
+    if (washText === "wash-1.png") wash.src = "./img/wash-2.png"
+    else wash.src = "./img/wash-1.png"
+  }, 350)
 
   makeupTypes.map((mkup, i) => {
     let snd;
