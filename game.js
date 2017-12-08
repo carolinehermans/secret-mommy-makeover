@@ -17,7 +17,7 @@ const imagesToLoad = [
   "wash-1.png", "wash-2.png"
 ]
 
-const soundsToLoad = ["munch.wav", "pop.mp3", "background-music.mp3"]
+const soundsToLoad = ["munch.wav", "pop.mp3"]
 
 
 
