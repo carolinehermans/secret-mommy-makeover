@@ -170,7 +170,7 @@
           <img id="done-button" class="pointer"  src="./img/done.png" onmouseover="popAudio.play(); this.src='./img/done-hover.png'" onmouseout="this.src='./img/done.png'" onclick="document.done = 1; document.getElementById('drawer-state').style.display = 'none'; document.getElementById('defaultCanvas0').style.display = 'block';"/>
         </div>
       </div>
-      <img id="drawer-button" class="pointer" src="./img/drawer-button.png" onmouseover="popAudio.play(); this.src='./img/drawer-button-hover.png'" onmouseout="this.src='./img/drawer-button.png'" onclick="changeState(); sound.stop();"/>
+      <img id="drawer-button" class="pointer" src="./img/drawer-button.png" onmouseover="popAudio.play(); this.src='./img/drawer-button-hover.png'" onmouseout="this.src='./img/drawer-button.png'" onclick="changeState();"/>
       <img id="letter-open" class="pointer" src="./img/letter-open-full.png" onclick="{console.log(document.currentMakeup); document.getElementById(document.currentMakeup.extraImg).style.display = 'none';
       document.getElementById(document.currentMakeup.img).style.display = 'block'; document.getElementById(drawer-text).innerHTML = '';}"/>
       <img id="polaroid-close" class="pointer" src="./img/polaroid-close.png" onclick="{console.log(document.currentMakeup); document.getElementById(document.currentMakeup.extraImg).style.display = 'none';
