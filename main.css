@@ -3,6 +3,10 @@
   src: url("RWATangoCharlie-Slanted.otf")
 }
 
+html {
+  cursor: url("./img/cursor-arrow.png"), auto;
+}
+
 img {
   user-drag: none;
   user-select: none;
